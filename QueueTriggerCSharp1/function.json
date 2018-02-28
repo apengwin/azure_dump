@@ -1,0 +1,41 @@
+{
+  "bindings": [
+    {
+      "type": "serviceBusTrigger",
+      "name": "mySbMsg",
+      "queueName": "taskqueue",
+      "connection": "mysbqueue_RootManageSharedAccessKey_SERVICEBUS",
+      "accessRights": "Listen",
+      "direction": "in"
+    },
+    {
+      "type": "blob",
+      "name": "funcfile",
+      "path": "azure-webjobs-hosts/{func_key}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "blob",
+      "name": "datafile",
+      "path": "azure-webjobs-hosts/{data_key}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "in"
+    },
+    {
+      "type": "blob",
+      "name": "outputfile",
+      "path": "azure-webjobs-hosts/{output_key}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    },
+    {
+      "type": "blob",
+      "name": "statusfile",
+      "path": "azure-webjobs-hosts/{status_key}",
+      "connection": "AzureWebJobsStorage",
+      "direction": "out"
+    }
+  ],
+  "disabled": false
+}
